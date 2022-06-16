@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 public class SupportAbility {
 
+    private Long id;
     private String description;
     private Job job;
 }

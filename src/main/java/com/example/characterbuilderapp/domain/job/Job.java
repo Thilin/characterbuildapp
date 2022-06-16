@@ -9,6 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Job {
 
-    private String name;
+    private Long id;
+    private String description;
     private String image;
 }

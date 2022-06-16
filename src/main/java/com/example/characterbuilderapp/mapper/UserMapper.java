@@ -2,7 +2,6 @@ package com.example.characterbuilderapp.mapper;
 
 import com.example.characterbuilderapp.domain.user.User;
 import com.example.characterbuilderapp.dto.CreateUserdto;
-import com.example.characterbuilderapp.dto.CreatedUserResponse;
 import com.example.characterbuilderapp.infra.db.msql.data.user.UserModel;
 import com.example.characterbuilderapp.dto.UserResponse;
 import com.example.characterbuilderapp.core.operations.user.UserOperation;

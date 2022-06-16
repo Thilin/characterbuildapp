@@ -1,16 +1,16 @@
 package com.example.characterbuilderapp.dto;
 
+import com.example.characterbuilderapp.domain.job.Job;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Column;
-
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class SupportAbilityResponse {
 
     private Long id;
     private String description;
+    private JobResponse job;
 }
