@@ -1,4 +1,4 @@
-package com.example.characterbuilderapp.usecases.command;
+package com.example.characterbuilderapp.usecases.command.job;
 
 import com.example.characterbuilderapp.core.business.job.FindJobByIdCommand;
 import com.example.characterbuilderapp.core.operations.job.JobOperation;
