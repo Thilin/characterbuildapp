@@ -1,6 +1,5 @@
-package com.example.characterbuilderapp.domain.character;
+package com.example.characterbuilderapp.dto;
 
-import com.example.characterbuilderapp.domain.element.Element;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,11 +7,11 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class Character {
+public class CharacterResponse {
 
     private Long id;
     private String name;
     private String image;
     private String rarity;
-    private Element element;
+    private ElementResponse element;
 }
