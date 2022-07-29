@@ -18,6 +18,8 @@ public abstract class JobMapper {
     @Mapping(target = "job.id", source = "id")
     public abstract JobOperation mapToOperation(Long id);
 
+    public abstract JobOperation mapToOperation(Job job);
+
     @Mapping(target = "id", source = "job.id")
     @Mapping(target = "description", source = "job.description")
     @Mapping(target = "image", source = "job.image")

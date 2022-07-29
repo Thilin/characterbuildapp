@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class FindUserProcessor implements Processor<UserOperation, UserOperation> {
+public class FindUserByIdProcessor implements Processor<UserOperation, UserOperation> {
 
     private final UserRepository userRepository;
 

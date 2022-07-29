@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class FindEsperByIdCommandImpl implements FindEsperByIdCommand {
+public class  FindEsperByIdCommandImpl implements FindEsperByIdCommand {
 
     private final FindEsperByIdProcessor findEsperByIdProcessor;
     @Override

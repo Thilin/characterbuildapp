@@ -2,7 +2,6 @@ package com.example.characterbuilderapp.controller;
 
 import com.example.characterbuilderapp.core.business.esper.FindEsperByIdCommand;
 import com.example.characterbuilderapp.dto.EsperResponse;
-import com.example.characterbuilderapp.dto.JobResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

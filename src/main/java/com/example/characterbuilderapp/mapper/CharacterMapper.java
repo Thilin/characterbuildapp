@@ -1,6 +1,7 @@
 package com.example.characterbuilderapp.mapper;
 
 import com.example.characterbuilderapp.core.operations.character.CharacterOperation;
+import com.example.characterbuilderapp.core.operations.character.ListCharacterJobsOperation;
 import com.example.characterbuilderapp.domain.character.Character;
 import com.example.characterbuilderapp.dto.CharacterResponse;
 import com.example.characterbuilderapp.infra.db.msql.data.character.CharacterModel;
@@ -24,4 +25,7 @@ public abstract class CharacterMapper {
     @Mapping(target = "rarity", source = "character.rarity")
     @Mapping(target = "element", source = "character.element")
     public abstract CharacterResponse mapToResponse(CharacterOperation operation);
+
+    @Mapping(target = "characterId", source = "id")
+    public abstract ListCharacterJobsOperation mapToListCharacterJobsOperation(Long id);
 }
