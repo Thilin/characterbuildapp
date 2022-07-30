@@ -1,48 +1,47 @@
-##Character Controller
-1. GET findById = Retorna o character por id OK
-2. GET pageAll = Retorna lista de todos os personagens paginada. OK
+# BuildController
+- Cria uma build usando o id do Usuário
+- Lista todas as builds de um usuário
+- Encontra uma build de um usuário
+- Deletar build de um usuário
+- Alterar build de um usuário
+- Favoritar build de um usuário
 
-##CharacterBuilt Controller
-2. GET findBuildDetailsById = retorna uma build por id contendo todas as informações da build. (OK)
-3. GET pageAll = retorna a lista de builds por user de forma resumida. (OK)
-4. PUT updateBuild = Faz alterações em uma build
-5. DELETE deleteById = exclui uma build por id
-6. POST createBuild = cria uma build por userId (OK)
+ Usuário poderá filtrar a listagem de builds usando ELEMENTO e RARIDADE como parametros.
 
-##Character Job
-1. GET listByCharacterId = Lista todos os jobs de um personagem (OK)
+Uma Build favoritada não poderá ser deletada.
 
-##Equipment
-1. GET findById = Retorna um equipamento (OK)
-2. GET pageAll = retorna lista paginada de todos os equipmanentos (OK)
+# CharacterController
+- Encontrar personagem por Id
+- Listar todos os personagens
+- Favoritar um personagem
 
-##Esper
-1. GET findById = Retorna um Esper por id. (OK)
-2. GET pageAll = Retorna lista paginada de todos os espers (OK)
+Usuário poderá filtrar personagens por elemento ou raridade
 
-##Job
-1. GET findById = retorna um job por id. (OK)
+# EsperController
+- Encontrar Esper por id
+- Listar todos os Espers
 
-##Reaction
-1. GET findById = Retorna uma reaction by id; (OK)
-2. GET listByCharacterId = retorna as reactions de um personagem (OK)
+Espers poderão ser filtrados por raridade ou elemento.
 
-##Support Ability
-1. GET findById = Retorna uma reaction by id (OK)
-2. GET listByCharacterId = retorna todas as support abilities de um personagem. (OK)
+# JobController
+- Encontrar job por id
+- Listar jobs por personagemid
 
-##Vision Card
-1. GET findById = retorna uma visioncard por id (OK)
-2. GET pageAll = retorna uma lista paginada de todos os visioncards (OK)
+# ReactionController
+- Encontrar reaction por id
+- Listar reactions por personagemid
 
+# SupportAbilityController
+- Encontrar supportability por id
+- Listar support abilities por personagemid
 
-Rodar o Zookeeper a partir da pasta kafka
+# UserController
+- Criar user
+- Editar user
+- Excluir user
 
-.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+# VisionCardController
+- Encontrar visioncard por id
+- Listar visioncards
 
-Rodar Kafka a partir da pasta kafka
-
-.\bin\windows\kafka-server-start.bat .\config\server.properties
-
-Entities = classes de dominio
-Use Cases = Commands que trabalham com os Processors
+Visioncards poderão ser filtradas por elemento e raridade.
