@@ -3,6 +3,7 @@ package com.example.characterbuilderapp.controller;
 import com.example.characterbuilderapp.core.business.visioncard.VisionCardCommand;
 import com.example.characterbuilderapp.core.operations.visioncard.VisionCardOperation;
 import com.example.characterbuilderapp.dto.VisionCardResponse;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ public class VisionCardController {
     private final VisionCardCommand visionCardCommand;
 
     @GetMapping(value = "/{id}", produces = "application/json")
+    @Operation(description = "Finds a Vision Card by Id")
     public ResponseEntity<VisionCardResponse> findById(@PathVariable Long id){
         VisionCardOperation operation = INSTANCE.mapToOperation(id);
         visionCardCommand.execute(operation);
