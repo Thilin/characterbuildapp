@@ -9,7 +9,11 @@ import com.example.characterbuilderapp.mapper.SupportAbilityMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.example.characterbuilderapp.core.exception.ErrorConstants.*;
+import static com.example.characterbuilderapp.mapper.SupportAbilityMapper.*;
 
 @Repository
 @AllArgsConstructor
@@ -20,6 +24,12 @@ public class SupportAbilityRepositoryImpl implements SupportAbilityRepository {
     @Override
     public SupportAbility findById(Long id) {
         var model = supportAbilityRepositoryMysql.findById(id).orElseThrow(() -> new ObjectNotFoundException(SUPPORT_ABILITY_NAO_ENCONTRADO));
-        return SupportAbilityMapper.INSTANCE.mapToDomain(model);
+        return INSTANCE.mapToDomain(model);
+    }
+
+    @Override
+    public List<SupportAbility> findByJobId(Long id) {
+        var models = supportAbilityRepositoryMysql.findByJobId(id);
+        return models.stream().map(INSTANCE::mapToDomain).collect(Collectors.toList());
     }
 }
