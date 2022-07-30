@@ -23,5 +23,5 @@ public abstract class VisionCardMapper {
     @Mapping(target = "id", source = "visionCard.id")
     @Mapping(target = "description", source = "visionCard.description")
     @Mapping(target = "image", source = "visionCard.image")
-    public abstract VisionCardResponse mapToResponse(VisionCardOperation operation);
+    public abstract VisionCardResponse mapToResponse(VisionCard visionCard);
 }
