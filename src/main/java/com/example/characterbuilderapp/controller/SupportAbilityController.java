@@ -5,6 +5,7 @@ import com.example.characterbuilderapp.core.operations.supportability.SupportAbi
 import com.example.characterbuilderapp.core.operations.visioncard.VisionCardOperation;
 import com.example.characterbuilderapp.dto.SupportAbilityResponse;
 import com.example.characterbuilderapp.dto.VisionCardResponse;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class SupportAbilityController {
     private final FindSupportAbilityByIdCommand findSupportAbilityByIdCommand;
 
     @GetMapping(value = "/{id}", produces = "application/json")
+    @Operation(description = "Find a support ability by id")
     public ResponseEntity<SupportAbilityResponse> findById(@PathVariable Long id){
         SupportAbilityOperation operation = INSTANCE.mapToOperation(id);
         findSupportAbilityByIdCommand.execute(operation);

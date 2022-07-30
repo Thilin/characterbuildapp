@@ -12,5 +12,4 @@ public class SupportAbilityResponse {
 
     private Long id;
     private String description;
-    private JobResponse job;
 }

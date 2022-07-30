@@ -20,6 +20,5 @@ public abstract class SupportAbilityMapper {
 
     @Mapping(target = "id", source = "supportAbility.id")
     @Mapping(target = "description", source = "supportAbility.description")
-    @Mapping(target = "job", source = "supportAbility.job")
     public abstract SupportAbilityResponse mapToResponse(SupportAbilityOperation operation);
 }
