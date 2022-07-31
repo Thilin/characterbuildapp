@@ -26,19 +26,11 @@ import static com.example.characterbuilderapp.mapper.CharacterMapper.*;
 public class CharacterController {
 
     private final FindCharacterByIdCommand findCharacterByIdCommand;
-    private final ListJobsByCharacterIdCommand listJobsByCharacterIdCommand;
 
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<CharacterResponse> findById(@PathVariable Long id){
         var operation = INSTANCE.mapToOperation(id);
         findCharacterByIdCommand.execute(operation);
         return ResponseEntity.ok(INSTANCE.mapToResponse(operation));
-    }
-
-    @GetMapping(value = "/{id}/jobs", produces = "Application/json")
-    public ResponseEntity<List<JobResponse>> listJobsByCharacterId(@PathVariable Long id){
-        ListCharacterJobsOperation operation = INSTANCE.mapToListCharacterJobsOperation(id);
-        listJobsByCharacterIdCommand.execute(operation);
-        return ResponseEntity.ok(operation.getJobs().stream().map(JobMapper.INSTANCE::mapToResponse).collect(Collectors.toList()));
     }
 }
