@@ -5,4 +5,6 @@ import com.example.characterbuilderapp.domain.reaction.Reaction;
 public interface ReactionRepository {
 
     Reaction findById(Long id);
+
+    Reaction findByJobId(Long id);
 }

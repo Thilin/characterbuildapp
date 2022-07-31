@@ -21,4 +21,10 @@ public class ReactionRepositoryImpl implements ReactionRepository {
         var model = reactionRepositoryMysql.findById(id).orElseThrow(() -> new ObjectNotFoundException(REACTION_NAO_ENCONTRADO));
         return ReactionMapper.INSTANCE.mapToDomain(model);
     }
+
+    @Override
+    public Reaction findByJobId(Long id) {
+        var model = reactionRepositoryMysql.findByJobId(id);
+        return ReactionMapper.INSTANCE.mapToDomain(model);
+    }
 }

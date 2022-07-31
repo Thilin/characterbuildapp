@@ -18,8 +18,5 @@ public abstract class ReactionMapper {
     @Mapping(target = "reaction.id", source = "id")
     public abstract ReactionOperation mapToOperation(Long id);
 
-    @Mapping(target = "id", source = "reaction.id")
-    @Mapping(target = "description", source = "reaction.description")
-    @Mapping(target = "job", source = "reaction.job")
-    public abstract ReactionResponse mapToResponse(ReactionOperation operation);
+    public abstract ReactionResponse mapToResponse(Reaction operation);
 }

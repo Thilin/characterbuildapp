@@ -12,5 +12,4 @@ public class ReactionResponse {
 
     private Long id;
     private String description;
-    private Job job;
 }
