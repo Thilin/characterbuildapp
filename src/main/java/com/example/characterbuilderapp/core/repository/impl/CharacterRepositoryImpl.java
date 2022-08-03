@@ -1,16 +1,14 @@
 package com.example.characterbuilderapp.core.repository.impl;
 
-import com.example.characterbuilderapp.core.exception.ErrorConstants;
 import com.example.characterbuilderapp.core.exception.ObjectNotFoundException;
 import com.example.characterbuilderapp.core.repository.CharacterRepository;
 import com.example.characterbuilderapp.domain.character.Character;
 import com.example.characterbuilderapp.infra.db.msql.repository.CharacterRepositoryMysql;
-import com.example.characterbuilderapp.mapper.CharacterMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import static com.example.characterbuilderapp.core.exception.ErrorConstants.*;
-import static com.example.characterbuilderapp.mapper.CharacterMapper.*;
+import static com.example.characterbuilderapp.core.mapper.CharacterMapper.*;
 
 @Repository
 @AllArgsConstructor

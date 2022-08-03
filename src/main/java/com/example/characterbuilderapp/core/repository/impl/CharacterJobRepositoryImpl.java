@@ -3,7 +3,7 @@ package com.example.characterbuilderapp.core.repository.impl;
 import com.example.characterbuilderapp.core.repository.CharacterJobRepository;
 import com.example.characterbuilderapp.domain.job.Job;
 import com.example.characterbuilderapp.infra.db.msql.repository.CharacterJobRepositoryMysql;
-import com.example.characterbuilderapp.mapper.JobMapper;
+import com.example.characterbuilderapp.core.mapper.JobMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

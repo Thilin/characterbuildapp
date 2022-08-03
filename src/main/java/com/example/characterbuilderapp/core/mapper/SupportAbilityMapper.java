@@ -1,4 +1,4 @@
-package com.example.characterbuilderapp.mapper;
+package com.example.characterbuilderapp.core.mapper;
 
 import com.example.characterbuilderapp.core.operations.supportability.SupportAbilityOperation;
 import com.example.characterbuilderapp.domain.supportability.SupportAbility;

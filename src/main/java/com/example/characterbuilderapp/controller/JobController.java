@@ -4,8 +4,8 @@ import com.example.characterbuilderapp.core.business.character.ListJobsByCharact
 import com.example.characterbuilderapp.core.business.job.FindJobByIdCommand;
 import com.example.characterbuilderapp.core.operations.character.ListCharacterJobsOperation;
 import com.example.characterbuilderapp.dto.JobResponse;
-import com.example.characterbuilderapp.mapper.CharacterMapper;
-import com.example.characterbuilderapp.mapper.JobMapper;
+import com.example.characterbuilderapp.core.mapper.CharacterMapper;
+import com.example.characterbuilderapp.core.mapper.JobMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.example.characterbuilderapp.mapper.JobMapper.INSTANCE;
+import static com.example.characterbuilderapp.core.mapper.JobMapper.INSTANCE;
 
 
 @RestController

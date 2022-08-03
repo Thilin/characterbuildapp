@@ -1,4 +1,4 @@
-package com.example.characterbuilderapp.mapper;
+package com.example.characterbuilderapp.core.mapper;
 
 import com.example.characterbuilderapp.domain.user.User;
 import com.example.characterbuilderapp.dto.CreateUserdto;

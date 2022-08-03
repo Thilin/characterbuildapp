@@ -4,9 +4,7 @@ import com.example.characterbuilderapp.core.business.supportability.FindSupportA
 import com.example.characterbuilderapp.core.business.supportability.ListCharacterSupportAbilitiesCommand;
 import com.example.characterbuilderapp.core.operations.supportability.ListSupportAbilitiesByCharacterIdOperation;
 import com.example.characterbuilderapp.core.operations.supportability.SupportAbilityOperation;
-import com.example.characterbuilderapp.core.operations.visioncard.VisionCardOperation;
 import com.example.characterbuilderapp.dto.SupportAbilityResponse;
-import com.example.characterbuilderapp.dto.VisionCardResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.example.characterbuilderapp.mapper.SupportAbilityMapper.INSTANCE;
+import static com.example.characterbuilderapp.core.mapper.SupportAbilityMapper.INSTANCE;
 
 @RestController
 @AllArgsConstructor

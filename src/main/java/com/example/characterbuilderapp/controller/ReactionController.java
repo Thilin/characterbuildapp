@@ -4,7 +4,7 @@ import com.example.characterbuilderapp.core.business.reaction.FindReactionByIdCo
 import com.example.characterbuilderapp.core.business.reaction.ListCharacterReactionsCommand;
 import com.example.characterbuilderapp.core.operations.reaction.ListCharacterReactionsOperation;
 import com.example.characterbuilderapp.dto.ReactionResponse;
-import com.example.characterbuilderapp.mapper.ReactionMapper;
+import com.example.characterbuilderapp.core.mapper.ReactionMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.example.characterbuilderapp.mapper.ReactionMapper.INSTANCE;
+import static com.example.characterbuilderapp.core.mapper.ReactionMapper.INSTANCE;
 
 @RestController
 @AllArgsConstructor

@@ -5,7 +5,7 @@ import com.example.characterbuilderapp.core.business.build.ListBuildByUserIdComm
 import com.example.characterbuilderapp.core.operations.build.CreateBuildOperation;
 import com.example.characterbuilderapp.dto.CreateBuildDTO;
 import com.example.characterbuilderapp.dto.ListBuildByUserIdOperation;
-import com.example.characterbuilderapp.mapper.BuildMapper;
+import com.example.characterbuilderapp.core.mapper.BuildMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

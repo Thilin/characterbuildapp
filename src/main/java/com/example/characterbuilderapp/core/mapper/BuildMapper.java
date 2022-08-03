@@ -1,12 +1,10 @@
-package com.example.characterbuilderapp.mapper;
+package com.example.characterbuilderapp.core.mapper;
 
 import com.example.characterbuilderapp.core.operations.build.CreateBuildOperation;
 import com.example.characterbuilderapp.domain.build.Build;
 import com.example.characterbuilderapp.dto.CreateBuildDTO;
-import com.example.characterbuilderapp.dto.ListBuildByUserIdOperation;
 import com.example.characterbuilderapp.infra.db.msql.data.build.CharacterBuiltModel;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

@@ -4,8 +4,7 @@ import com.example.characterbuilderapp.core.repository.CharacterBuildRepository;
 import com.example.characterbuilderapp.domain.build.Build;
 import com.example.characterbuilderapp.infra.db.msql.data.build.CharacterBuiltModel;
 import com.example.characterbuilderapp.infra.db.msql.repository.CharacterBuiltRepositoryMysql;
-import com.example.characterbuilderapp.mapper.BuildMapper;
-import com.example.characterbuilderapp.mapper.CharacterMapper;
+import com.example.characterbuilderapp.core.mapper.BuildMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

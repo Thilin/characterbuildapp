@@ -4,7 +4,7 @@ import com.example.characterbuilderapp.core.exception.ObjectNotFoundException;
 import com.example.characterbuilderapp.core.repository.UserRepository;
 import com.example.characterbuilderapp.domain.user.User;
 import com.example.characterbuilderapp.infra.db.msql.repository.UserRepositoryMysql;
-import com.example.characterbuilderapp.mapper.UserMapper;
+import com.example.characterbuilderapp.core.mapper.UserMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
