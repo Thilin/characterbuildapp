@@ -1,7 +1,7 @@
 package com.example.characterbuilderapp.usecases.job.commands;
 
-import com.example.characterbuilderapp.core.business.character.ListJobsByCharacterIdCommand;
-import com.example.characterbuilderapp.core.operations.character.ListCharacterJobsOperation;
+import com.example.characterbuilderapp.core.business.job.ListJobsByCharacterIdCommand;
+import com.example.characterbuilderapp.core.operations.job.ListCharacterJobsOperation;
 import com.example.characterbuilderapp.usecases.job.processors.FindJobsByCharacterIdProcessor;
 import com.example.characterbuilderapp.utils.Pipeline;
 import lombok.AllArgsConstructor;

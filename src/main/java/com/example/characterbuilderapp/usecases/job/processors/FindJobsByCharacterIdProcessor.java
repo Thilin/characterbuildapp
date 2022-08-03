@@ -1,6 +1,6 @@
 package com.example.characterbuilderapp.usecases.job.processors;
 
-import com.example.characterbuilderapp.core.operations.character.ListCharacterJobsOperation;
+import com.example.characterbuilderapp.core.operations.job.ListCharacterJobsOperation;
 import com.example.characterbuilderapp.core.repository.CharacterJobRepository;
 import com.example.characterbuilderapp.domain.job.Job;
 import com.example.characterbuilderapp.core.mapper.JobMapper;

@@ -7,6 +7,9 @@ import com.example.characterbuilderapp.infra.db.msql.repository.CharacterReposit
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.example.characterbuilderapp.core.exception.ErrorConstants.*;
 import static com.example.characterbuilderapp.core.mapper.CharacterMapper.*;
 
@@ -19,5 +22,11 @@ public class CharacterRepositoryImpl implements CharacterRepository {
     public Character findById(Long id) {
         var model = characterRepositoryMysql.findById(id).orElseThrow(()-> new ObjectNotFoundException(CHARACTER_NAO_ENCONTRADO));
         return INSTANCE.mapToDomain(model);
+    }
+
+    @Override
+    public List<Character> findAll() {
+        var models = characterRepositoryMysql.findAll();
+        return models.stream().map(INSTANCE::mapToDomain).collect(Collectors.toList());
     }
 }

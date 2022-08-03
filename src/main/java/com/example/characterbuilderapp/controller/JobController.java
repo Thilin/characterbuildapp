@@ -1,8 +1,8 @@
 package com.example.characterbuilderapp.controller;
 
-import com.example.characterbuilderapp.core.business.character.ListJobsByCharacterIdCommand;
+import com.example.characterbuilderapp.core.business.job.ListJobsByCharacterIdCommand;
 import com.example.characterbuilderapp.core.business.job.FindJobByIdCommand;
-import com.example.characterbuilderapp.core.operations.character.ListCharacterJobsOperation;
+import com.example.characterbuilderapp.core.operations.job.ListCharacterJobsOperation;
 import com.example.characterbuilderapp.dto.JobResponse;
 import com.example.characterbuilderapp.core.mapper.CharacterMapper;
 import com.example.characterbuilderapp.core.mapper.JobMapper;

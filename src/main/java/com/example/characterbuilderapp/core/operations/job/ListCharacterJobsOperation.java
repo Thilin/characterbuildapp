@@ -1,4 +1,4 @@
-package com.example.characterbuilderapp.core.operations.character;
+package com.example.characterbuilderapp.core.operations.job;
 
 import com.example.characterbuilderapp.core.operations.job.JobOperation;
 import lombok.AllArgsConstructor;
