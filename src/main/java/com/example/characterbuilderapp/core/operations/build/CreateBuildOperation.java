@@ -1,7 +1,5 @@
 package com.example.characterbuilderapp.core.operations.build;
 
-import com.example.characterbuilderapp.core.operations.character.CharacterOperation;
-import com.example.characterbuilderapp.core.operations.user.UserOperation;
 import com.example.characterbuilderapp.domain.build.Build;
 import com.example.characterbuilderapp.domain.character.Character;
 import com.example.characterbuilderapp.domain.esper.Esper;

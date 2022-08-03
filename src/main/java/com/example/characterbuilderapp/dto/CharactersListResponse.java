@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-public class CharacterResponse {
+public class CharactersListResponse {
 
     private Long id;
     private String name;

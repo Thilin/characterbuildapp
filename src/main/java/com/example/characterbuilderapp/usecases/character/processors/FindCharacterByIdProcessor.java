@@ -1,8 +1,7 @@
 package com.example.characterbuilderapp.usecases.character.processors;
 
-import com.example.characterbuilderapp.core.operations.character.CharacterOperation;
+import com.example.characterbuilderapp.core.operations.character.FindCharacterDetailsOperation;
 import com.example.characterbuilderapp.core.repository.CharacterRepository;
-import com.example.characterbuilderapp.domain.character.Character;
 import com.example.characterbuilderapp.utils.Processor;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -10,13 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class FindCharacterByIdProcessor implements Processor<CharacterOperation, CharacterOperation> {
+public class FindCharacterByIdProcessor implements Processor<FindCharacterDetailsOperation, FindCharacterDetailsOperation> {
 
     private final CharacterRepository characterRepository;
 
     @Override
-    public CharacterOperation process(CharacterOperation operation) {
-        var character = characterRepository.findById(operation.getCharacter().getId());
+    public FindCharacterDetailsOperation process(FindCharacterDetailsOperation operation) {
+        var character = characterRepository.findById(operation.getId());
         operation.setCharacter(character);
         return operation;
     }

@@ -1,9 +1,11 @@
 package com.example.characterbuilderapp.controller;
 
-import com.example.characterbuilderapp.core.business.character.FindCharacterByIdCommand;
+import com.example.characterbuilderapp.core.business.character.FindCharacterDetailsCommand;
 import com.example.characterbuilderapp.core.business.character.ListAllCharactersCommand;
+import com.example.characterbuilderapp.core.operations.character.FindCharacterDetailsOperation;
 import com.example.characterbuilderapp.core.operations.character.ListAllCharactersOperation;
-import com.example.characterbuilderapp.dto.CharacterResponse;
+import com.example.characterbuilderapp.dto.CharacterDetailsResponse;
+import com.example.characterbuilderapp.dto.CharactersListResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,21 +24,23 @@ import static com.example.characterbuilderapp.core.mapper.CharacterMapper.*;
 @AllArgsConstructor
 public class CharacterController {
 
-    private final FindCharacterByIdCommand findCharacterByIdCommand;
+    private final FindCharacterDetailsCommand findCharacterByIdCommand;
     private final ListAllCharactersCommand listAllCharactersCommand;
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<CharacterResponse> findById(@PathVariable Long id){
-        var operation = INSTANCE.mapToOperation(id);
+    @Operation(description = "Find a character by id and show its details")
+    public ResponseEntity<CharacterDetailsResponse> findById(@PathVariable Long id){
+        var operation = new FindCharacterDetailsOperation();
+        operation.setId(id);
         findCharacterByIdCommand.execute(operation);
-        return ResponseEntity.ok(INSTANCE.mapToResponse(operation.getCharacter()));
+        return ResponseEntity.ok(INSTANCE.mapToCharacterDetailsResponse(operation));
     }
 
     @GetMapping()
     @Operation(description = "List all characters resumed")
-    public ResponseEntity<List<CharacterResponse>> listAll(){
+    public ResponseEntity<List<CharactersListResponse>> listAll(){
         ListAllCharactersOperation operation = new ListAllCharactersOperation();
         listAllCharactersCommand.execute(operation);
-        return ResponseEntity.ok().body(operation.getCharacters().stream().map(character -> INSTANCE.mapToResponse(character)).collect(Collectors.toList()));
+        return ResponseEntity.ok().body(operation.getCharacters().stream().map(INSTANCE::mapToResponse).collect(Collectors.toList()));
     }
 }
