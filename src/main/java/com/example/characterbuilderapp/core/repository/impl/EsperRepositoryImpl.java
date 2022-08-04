@@ -7,6 +7,9 @@ import com.example.characterbuilderapp.infra.db.msql.repository.EsperRepositoryM
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.example.characterbuilderapp.core.exception.ErrorConstants.*;
 import static com.example.characterbuilderapp.core.mapper.EsperMapper.*;
 
@@ -20,5 +23,11 @@ public class EsperRepositoryImpl implements EsperRepository {
     public Esper findById(Long id) {
         var model = esperRepositoryMysql.findById(id).orElseThrow(() -> new ObjectNotFoundException(ESPER_NAO_ENCONTRADO));
         return INSTANCE.mapToDomain(model);
+    }
+
+    @Override
+    public List<Esper> findAll() {
+        var models = esperRepositoryMysql.findAll();
+        return models.stream().map(INSTANCE::mapToDomain).collect(Collectors.toList());
     }
 }

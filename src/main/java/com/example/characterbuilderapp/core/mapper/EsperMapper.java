@@ -21,7 +21,7 @@ public abstract class EsperMapper {
     @Mapping(target = "image", source = "esper.image")
     @Mapping(target = "rarity", source = "esper.rarity")
     @Mapping(target = "element", source = "esper.element")
-    public abstract EsperResponse mapToResponse(EsperOperation operation);
+    public abstract EsperResponse mapToResponse(Esper esper);
 
     public abstract Esper mapToDomain(EsperModel model);
 }
