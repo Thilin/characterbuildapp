@@ -11,20 +11,23 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.example.characterbuilderapp.core.mapper.BuildMapper.*;
+
 @Repository
 @AllArgsConstructor
 public class CharacterBuildRepositoryImpl implements CharacterBuildRepository {
 
     private final CharacterBuiltRepositoryMysql characterBuiltRepositoryMysql;
     @Override
-    public void save(Build build) {
-        CharacterBuiltModel model = BuildMapper.INSTANCE.mapToModel(build);
+    public Build save(Build build) {
+        CharacterBuiltModel model = INSTANCE.mapToModel(build);
         characterBuiltRepositoryMysql.save(model);
+        return INSTANCE.mapToDomain(model);
     }
 
     @Override
     public List<Build> findByUserId(Long userId) {
         var builds = characterBuiltRepositoryMysql.findByUserId(userId);
-        return builds.stream().map(BuildMapper.INSTANCE::mapToDomain).collect(Collectors.toList());
+        return builds.stream().map(INSTANCE::mapToDomain).collect(Collectors.toList());
     }
 }

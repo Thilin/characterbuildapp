@@ -1,24 +1,25 @@
 package com.example.characterbuilderapp.domain.build;
 
 import com.example.characterbuilderapp.domain.character.Character;
+import com.example.characterbuilderapp.domain.equipment.Equipment;
 import com.example.characterbuilderapp.domain.esper.Esper;
-import com.example.characterbuilderapp.domain.reaction.Reaction;
-import com.example.characterbuilderapp.domain.user.User;
+import com.example.characterbuilderapp.domain.visioncard.VisionCard;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Build {
+public class ResumedBuild {
 
-    private Long id;
     private String name;
     private Character character;
     private Esper esper;
-    private Reaction reaction;
-    private User user;
+    private List<VisionCard> visionCards;
+    private List<Equipment> equipments;
 }

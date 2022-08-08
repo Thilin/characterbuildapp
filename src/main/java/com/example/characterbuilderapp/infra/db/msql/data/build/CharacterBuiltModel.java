@@ -27,22 +27,18 @@ public class CharacterBuiltModel {
     private String name;
 
     @OneToOne
-    @JoinColumn(name = "CHB_VCD_ID", referencedColumnName = "VCD_ID")
-    private VisionCardModel visionCard;
+    @JoinColumn(name = "CHB_CTR_ID", referencedColumnName = "CTR_ID")
+    private CharacterModel character;
 
     @OneToOne
     @JoinColumn(name = "CHB_ESP_ID", referencedColumnName = "ESP_ID")
     private EsperModel esper;
 
     @OneToOne
-    @JoinColumn(name = "CHB_CTR_ID", referencedColumnName = "CTR_ID")
-    private CharacterModel character;
+    @JoinColumn(name = "CHB_REA_ID", referencedColumnName = "REA_ID")
+    private ReactionModel reaction;
 
     @OneToOne
     @JoinColumn(name = "CHB_USR_ID", referencedColumnName = "USR_ID")
     private UserModel user;
-
-    @OneToOne
-    @JoinColumn(name = "CHB_REA_ID", referencedColumnName = "REA_ID")
-    private ReactionModel reaction;
 }

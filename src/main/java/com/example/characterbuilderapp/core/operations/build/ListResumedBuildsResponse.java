@@ -1,4 +1,4 @@
-package com.example.characterbuilderapp.dto;
+package com.example.characterbuilderapp.core.operations.build;
 
 import com.example.characterbuilderapp.domain.build.Build;
 import lombok.AllArgsConstructor;
@@ -12,8 +12,8 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ListBuildByUserIdOperation {
+public class ListResumedBuildsResponse {
 
     private Long userId;
-    private List<Build> build;
+    private List<Build> builds;
 }

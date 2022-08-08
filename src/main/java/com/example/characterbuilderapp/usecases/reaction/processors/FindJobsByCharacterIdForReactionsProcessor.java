@@ -2,7 +2,6 @@ package com.example.characterbuilderapp.usecases.reaction.processors;
 
 import com.example.characterbuilderapp.core.operations.reaction.ListCharacterReactionsOperation;
 import com.example.characterbuilderapp.core.repository.CharacterJobRepository;
-import com.example.characterbuilderapp.domain.character.CharacterJob;
 import com.example.characterbuilderapp.utils.Processor;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;

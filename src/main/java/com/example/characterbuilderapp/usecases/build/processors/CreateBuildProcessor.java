@@ -7,6 +7,8 @@ import com.example.characterbuilderapp.utils.Processor;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
+
 @Component
 @AllArgsConstructor
 public class CreateBuildProcessor implements Processor<CreateBuildOperation, CreateBuildOperation> {
@@ -14,6 +16,7 @@ public class CreateBuildProcessor implements Processor<CreateBuildOperation, Cre
     private final CharacterBuildRepository characterBuildRepository;
     
     @Override
+    @Transactional
     public CreateBuildOperation process(CreateBuildOperation createBuildOperation) {
         var build = new Build();
         build.setName(createBuildOperation.getName());
@@ -22,7 +25,7 @@ public class CreateBuildProcessor implements Processor<CreateBuildOperation, Cre
         build.setEsper(createBuildOperation.getEsper());
         build.setReaction(createBuildOperation.getReaction());
 
-        characterBuildRepository.save(build);
+        build = characterBuildRepository.save(build);
         createBuildOperation.setBuild(build);
         return createBuildOperation;
     }

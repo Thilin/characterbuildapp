@@ -26,7 +26,4 @@ public class CharacterBuiltVisionCardModel {
     @ManyToOne
     @JoinColumn(name = "CBV_CHB_ID")
     private CharacterBuiltModel characterBuilt;
-
-    @Column(name = "CBV_ISMAIN")
-    private boolean isMain;
 }

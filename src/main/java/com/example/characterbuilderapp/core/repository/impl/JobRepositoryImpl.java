@@ -2,6 +2,7 @@ package com.example.characterbuilderapp.core.repository.impl;
 
 import com.example.characterbuilderapp.core.exception.ObjectNotFoundException;
 import com.example.characterbuilderapp.core.repository.JobRepository;
+import com.example.characterbuilderapp.domain.character.CharacterJob;
 import com.example.characterbuilderapp.domain.job.Job;
 import com.example.characterbuilderapp.infra.db.msql.repository.JobRepositoryMysql;
 import com.example.characterbuilderapp.core.mapper.JobMapper;

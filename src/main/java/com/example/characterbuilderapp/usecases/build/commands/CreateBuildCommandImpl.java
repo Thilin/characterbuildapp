@@ -17,6 +17,10 @@ public class CreateBuildCommandImpl implements CreateBuildCommand {
     private final FindReactionProcessor findReactionProcessor;
     private final FindEsperProcessor findEsperProcessor;
     private final CreateBuildProcessor createBuildProcessor;
+    private final CreateBuildEquipmentsProcessor createBuildEquipmentsProcessor;
+    private final CreateBuildJobsProcessor createBuildJobsProcessor;
+    private final CreateBuildVisionCardsProcessor createBuildVisionCardsProcessor;
+    private final CreateBuildSupportAbilitiesProcessor createBuildSupportAbilitiesProcessor;
 
     @Override
     public CreateBuildOperation execute(CreateBuildOperation operation) {
@@ -26,6 +30,10 @@ public class CreateBuildCommandImpl implements CreateBuildCommand {
                 .process(findReactionProcessor)
                 .process(findEsperProcessor)
                 .process(createBuildProcessor)
+                .process(createBuildEquipmentsProcessor)
+                .process(createBuildJobsProcessor)
+                .process(createBuildVisionCardsProcessor)
+                .process(createBuildSupportAbilitiesProcessor)
                 .getOutput();
     }
 }

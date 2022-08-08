@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CharacterBuildRepository {
 
-    void save(Build build);
+    Build save(Build build);
 
     List<Build> findByUserId(Long userId);
 }

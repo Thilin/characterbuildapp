@@ -12,6 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 public class CharacterJob {
 
-    private List<Job> jobs;
+    private Long id;
+    private Job jobs;
     private Character character;
+    private boolean isMain;
 }
