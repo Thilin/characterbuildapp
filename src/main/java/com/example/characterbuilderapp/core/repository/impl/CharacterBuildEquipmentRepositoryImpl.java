@@ -7,6 +7,9 @@ import com.example.characterbuilderapp.infra.db.msql.repository.CharacterBuiltEq
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.example.characterbuilderapp.core.mapper.CharacterBuiltEquipmentMapper.INSTANCE;
 
 @Repository
@@ -18,5 +21,11 @@ public class CharacterBuildEquipmentRepositoryImpl implements CharacterBuildEqui
     public void save(CharacterBuildEquipment characterBuildEquipment) {
         CharacterBuiltEquipmentModel characterBuildEquipmentModel = INSTANCE.mapToModel(characterBuildEquipment);
         characterBuiltEquipmentRepositoryMysql.save(characterBuildEquipmentModel);
+    }
+
+    @Override
+    public List<CharacterBuildEquipment> findByBuildId(Long id) {
+        List<CharacterBuiltEquipmentModel> characterBuildEquipments = characterBuiltEquipmentRepositoryMysql.findByCharacterBuiltId(id);
+        return characterBuildEquipments.stream().map(INSTANCE::mapToDomain).collect(Collectors.toList());
     }
 }

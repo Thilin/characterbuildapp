@@ -3,12 +3,16 @@ package com.example.characterbuilderapp.controller;
 import com.example.characterbuilderapp.core.business.build.CreateBuildCommand;
 import com.example.characterbuilderapp.core.business.build.ListResumedBuildByUserIdCommand;
 import com.example.characterbuilderapp.core.operations.build.CreateBuildOperation;
+import com.example.characterbuilderapp.core.operations.build.ListResumedBuildOperation;
+import com.example.characterbuilderapp.domain.equipment.Equipment;
 import com.example.characterbuilderapp.dto.CreateBuildDTO;
-import com.example.characterbuilderapp.core.operations.build.ListResumedBuildsResponse;
-import com.example.characterbuilderapp.core.mapper.BuildMapper;
+import com.example.characterbuilderapp.dto.ListResumedBuildResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.characterbuilderapp.core.mapper.BuildMapper.*;
 
@@ -29,10 +33,10 @@ public class BuildController {
     }
 
     @GetMapping(value = "/{userId}")
-    public ResponseEntity<ListResumedBuildsResponse> listBuildsByUserId(@PathVariable Long userId){
-        ListResumedBuildsResponse operation = new ListResumedBuildsResponse();
+    public ResponseEntity<ListResumedBuildResponse> listBuildsByUserId(@PathVariable Long userId){
+        ListResumedBuildOperation operation = new ListResumedBuildOperation();
         operation.setUserId(userId);
         listBuildByUserIdCommand.execute(operation);
-        return ResponseEntity.ok().body(operation);
+        return ResponseEntity.ok().body(INSTANCE.mapToResponse(operation));
     }
 }

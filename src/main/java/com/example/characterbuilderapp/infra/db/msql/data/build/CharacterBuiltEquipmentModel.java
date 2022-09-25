@@ -1,13 +1,12 @@
 package com.example.characterbuilderapp.infra.db.msql.data.build;
 
 import com.example.characterbuilderapp.infra.db.msql.data.equipment.EquipmentModel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

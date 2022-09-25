@@ -1,8 +1,9 @@
 package com.example.characterbuilderapp.usecases.build.commands;
 
 import com.example.characterbuilderapp.core.business.build.ListResumedBuildByUserIdCommand;
-import com.example.characterbuilderapp.core.operations.build.ListResumedBuildsResponse;
-import com.example.characterbuilderapp.usecases.build.processors.ListBuildByUserIdProcessor;
+import com.example.characterbuilderapp.core.operations.build.ListResumedBuildOperation;
+import com.example.characterbuilderapp.usecases.build.processors.FindBuildsByUserIdProcessor;
+import com.example.characterbuilderapp.usecases.build.processors.ListBuildEquipmentsProcessor;
 import com.example.characterbuilderapp.utils.Pipeline;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,14 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class ListBuildByUserIdCommandImpl implements ListResumedBuildByUserIdCommand {
 
-    private final ListBuildByUserIdProcessor listBuildByUserIdProcessor;
+    private final FindBuildsByUserIdProcessor findBuildsByUserIdProcessor;
+    private final ListBuildEquipmentsProcessor listBuildEquipmentsProcessor;
 
     @Override
-    public ListResumedBuildsResponse execute(ListResumedBuildsResponse operation) {
+    public ListResumedBuildOperation execute(ListResumedBuildOperation operation) {
         return Pipeline.given(operation)
-                .process(listBuildByUserIdProcessor)
+                .process(findBuildsByUserIdProcessor)
+                .process(listBuildEquipmentsProcessor)
                 .getOutput();
     }
 }

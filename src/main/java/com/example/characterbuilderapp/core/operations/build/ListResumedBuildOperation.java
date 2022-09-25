@@ -1,5 +1,6 @@
-package com.example.characterbuilderapp.domain.build;
+package com.example.characterbuilderapp.core.operations.build;
 
+import com.example.characterbuilderapp.domain.build.Build;
 import com.example.characterbuilderapp.domain.character.Character;
 import com.example.characterbuilderapp.domain.equipment.Equipment;
 import com.example.characterbuilderapp.domain.esper.Esper;
@@ -11,17 +12,14 @@ import lombok.Setter;
 
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
-public class ResumedBuild {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ListResumedBuildOperation {
 
     private Long userId;
-    private Long id;
-    private String name;
-    private Character character;
-    private Esper esper;
+    private List<Build> builds;
     private List<VisionCard> visionCards;
     private List<Equipment> equipments;
 }
